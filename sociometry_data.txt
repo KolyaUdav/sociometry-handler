@@ -1,0 +1,7 @@
+NAME,PERSON1,PERSON2,PERSON3
+
+Ivanov,Sidorov,Petrov,Gorohov
+Gorohov,Sidorov,Ivanov,Gorin
+Gorin,Sidorov,Ivanov,Petrov
+Petrov,Gorohov,Ivanov,Sidorov
+Sidorov,Gorohov,Gorin,Ivanov

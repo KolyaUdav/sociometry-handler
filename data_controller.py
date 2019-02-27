@@ -18,3 +18,18 @@ class PersonController:
                     person.selections += 1
 
         return person_list
+
+    @staticmethod
+    def calculate_status(person_list):
+        for person in person_list:
+            person.status = person.selections / (len(person_list) - 1)
+
+        return person_list
+
+
+def run_controller(name, person1, person2, person3):
+    person_list = PersonController.add_person_to_list(name, person1, person2, person3)
+    person_list = PersonController.count_selections(person_list)
+    person_list = PersonController.calculate_status(person_list)
+
+    return person_list

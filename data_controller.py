@@ -5,8 +5,10 @@ class PersonController:
     @staticmethod
     def add_person_to_list(name, person1, person2, person3):
         person_list = []
+        id = 0
         for name, person1, person2, person3 in zip(name, person1, person2, person3):
-            person_list.append(Person(name=name, person1=person1, person2=person2, person3=person3))
+            person_list.append(Person(id, name, person1, person2, person3))
+            id += 1
 
         return person_list
 

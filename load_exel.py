@@ -12,6 +12,7 @@ def write_to_exel(person_list):
     write_names(sheet=sheet, list=person_list)
     write_other_person_ids(sheet=sheet, list=person_list)
     write_selected_person(sheet=sheet, list=person_list)
+    write_mutuals(sheet=sheet, list=person_list)
     wb.save('sociometry_result.xlsx')
 
 
@@ -36,22 +37,28 @@ def write_other_person_ids(sheet, list):
     for person in list:
         index = horizontal_cells[hc_index] + '1'
         sheet[index] = str(person_index)
-        print('person index: ' + index + ': ' + str(person_index))
         hc_index += 1
         person_index += 1
 
 
 def write_selected_person(sheet, list):
-    name_index = 2
-    hc_index = 2
-
     for person in list:
         for other_person in list:
             if other_person.name in person.others:
-                selected_index = horizontal_cells[hc_index] + str(name_index)
+                selected_index = get_cell(person, other_person)
                 sheet[selected_index] = '+'
-                print(selected_index + ': +')
-            hc_index += 1
 
-        hc_index = 2
-        name_index += 1
+
+def write_mutuals(sheet, list):
+    for person in list:
+        person_name = person.name
+        for other_name in person.others:
+            for other_person in list:
+                if other_person.name is other_name and person_name in other_person.others:
+                    sheet[get_cell(person, other_person)] = '+**'
+
+
+def get_cell(person, other_person):
+    letter_bias = 2
+    num_bias = 2
+    return horizontal_cells[other_person.id + letter_bias] + str(person.id + num_bias)

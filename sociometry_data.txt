@@ -1,7 +1,10 @@
 NAME,PERSON1,PERSON2,PERSON3
 
-Ivanov,Sidorov,Petrov,Gorohov
-Gorohov,Sidorov,Ivanov,Gorin
-Gorin,Sidorov,Ivanov,Petrov
-Petrov,Gorohov,Ivanov,Sidorov
-Sidorov,Gorohov,Gorin,Ivanov
+Томашенко,Коморная,Воробей,Лобода
+Ильюшенко,Гаврикова,Солоненко
+Довбыш,Паничева,Походова,Цинк
+Солоненко,Ильюшенко,Гаврикова,Попичева
+Сувига,Ильюшенко,Филюк,Довбыш
+Попичева,Походова,Цинк,Довбыш
+Гаврикова,Филюк,Ильюшенко,Солоненко
+Филюк,Довбыш,Попичева,Сувига
